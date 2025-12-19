@@ -14,7 +14,8 @@ This repository contains the "Secure User Profile & Access Control System" built
     - Implements **Separate IV and Content** storage for AES-256 encryption of sensitive fields (Aadhaar).
     - Separation of concerns: Controllers, Routes, Middleware, and Utils.
 - **Frontend:** React (Vite) Single Page Application.
-    - **Design System:** Custom CSS implementation of LenDenClub's brand identity (Blue `#235D94` / Green `#76AB49`).
+    - **Design System:** Custom CSS implementation of LenDenClub's brand identity (Blue `#235D94` / Green `#76AB49`). The UI is **inspired by the main LenDenClub website** to ensure brand consistency.
+    - **Dashboard Data:** Please note that the dashboard currently uses **dummy data** for demonstration purposes.
     - **Security:** Secure context storage for tokens; no sensitive data persists in localStorage beyond the token.
 
 ---
@@ -36,7 +37,10 @@ npm install
 # Start the server (Runs on port 5000)
 npm start
 ```
-*Note: `.env` is pre-configured for local dev. For production, keys should be rotated.*
+*Note: `.env` is pre-configured for local dev.*
+
+### Environment Configuration
+Environment variables are configured for local development. In **production**, secrets should be injected securely (e.g., via CI/CD pipelines or secret managers) and rotated periodically to maintain high security standards.
 
 ### Step 2: Frontend
 ```bash
