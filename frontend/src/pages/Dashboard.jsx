@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Dashboard = () => {
     const { user, fetchProfile, logout, loading, error } = useContext(AuthContext);
@@ -25,7 +26,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <nav className="dashboard-nav">
-                <div className="logo">LenDenClub Secure</div>
+                <img src={logo} alt="LenDenClub" className="logo-img" style={{ height: '32px', marginBottom: 0 }} />
                 <button onClick={handleLogout} className="btn-secondary">Logout</button>
             </nav>
 
@@ -45,7 +46,7 @@ const Dashboard = () => {
                         </div>
                         <div className="security-notice">
                             <span className="icon">🔒</span>
-                            This data is encrypted at rest using AES-256 and decrypted on-the-fly for your viewing.
+                            This data is decrypted on-the-fly and only visible to you.
                         </div>
                     </div>
                 </div>
