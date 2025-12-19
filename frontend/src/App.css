@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  /* LenDenClub Brand Colors */
+  --primary-blue: #235D94;
+  --secondary-green: #76AB49;
+  --text-dark: #252525;
+  --text-light: #555555;
+  --bg-light: #F8F9FA;
+  --white: #FFFFFF;
+  --border-color: #E5E7EB;
+
+  --primary-gradient: linear-gradient(135deg, #235D94 0%, #1a4b7a 100%);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+buttons {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+/* Background - Clean Corporate Look */
+.app-background {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Auth Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+/* Corporate Card Style */
+.auth-card,
+.profile-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-2px);
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--primary-blue);
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--white);
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(35, 93, 148, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-blue);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: #1a4b7a;
+  opacity: 1;
+}
+
+.btn-primary:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.auth-footer a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard Specifics */
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--white);
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.btn-secondary:hover {
+  background: #f0f7ff;
+}
+
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: var(--bg-light);
+}
+
+/* Profile Card Profile Header */
+.profile-card {
+  width: 600px;
+  max-width: 90%;
+  margin-top: 20px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 30px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.email {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+h1 {
+  color: var(--text-dark);
+  margin: 0 0 4px 0;
+  -webkit-text-fill-color: initial;
+}
+
+.secure-data-section {
+  background: #f0fdf4;
+  /* Very light green for secure/trust */
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #dcfce7;
+}
+
+.data-item {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.value.sensitive {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  /* Dark text for readability */
+  letter-spacing: 2px;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  border: 1px solid #bbf7d0;
+}
+
+.security-notice {
+  font-size: 0.85rem;
+  color: #166534;
+  /* Green text */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #bbf7d0;
+  font-weight: 500;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+  font-size: 0.9rem;
+}
+
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-blue);
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 1.2rem;
+}
