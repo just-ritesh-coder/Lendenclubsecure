@@ -87,15 +87,19 @@ npm run dev
 
 **AI Tool Used:** Google Deepmind Agentic AI
 
+The AI tool was used selectively and intentionally to improve development efficiency in non-core areas, while all architectural decisions, security flow, and API design were implemented manually.
+
 | AI-Assisted Tasks | Effectiveness Score | Justification |
 |:---|:---|:---|
-| **Encryption Utility Generation** (`cryptoUtils.js`) | **5/5** | AI generated a robust AES-256-CBC implementation (with separate IV handling) instantly, ensuring cryptographic correctness that is prone to human error. |
-| **Unit Test Creation** (`crypto.test.js`) | **5/5** | AI efficiently wrote comprehensive test suites (Positive, Negative, Tampering cases) to validate the "Data Security" requirement without manual boilerplate. |
-| **JWT Helper Functions** (`jwtUtils.js`) | **4/5** | Scaffolding for token signing/verification allowed focus to remain on the core business logic (User Service). |
-| **UI Styling Compliance** (`App.css`) | **5/5** | AI rapidly extracted color codes and generated CSS variables to match the mandatory "LenDenClub" brand identity, ensuring pixel-perfect alignment with requirements. |
+| **Encryption Utility Reference** (`cryptoUtils.js`) | **4/5** | AI was used to validate and scaffold the AES-256-CBC encryption/decryption utility (IV generation, crypto module usage). Final implementation, key handling, and integration with the User model were manually reviewed and adjusted. |
+| **Unit Test Boilerplate** (`crypto.test.js`) | **4/5** | AI helped generate initial unit test structure for encryption/decryption logic. Edge cases and assertions were refined manually to ensure correctness and alignment with assignment security requirements. |
+| **JWT Middleware Skeleton** (`jwtUtils.js`) | **3/5** | AI provided a basic JWT verification pattern. Token lifecycle handling, error responses, and route protection logic were implemented and customized manually. |
+| **Minor UI Styling Assistance** (`App.css`) | **3/5** | AI was used only to speed up basic CSS variable definitions and layout consistency. Component structure, state management, and API integration were fully human-implemented. |
 
-**Overall Effectiveness Score: 5**
-*Strategic Use Statement: AI usage was strictly limited to generating modular utilities (Encryption, JWT), writing test boilerplate, and ensuring brand compliance. All core architectural decisions (Microservice structure, API Design) were human-led to meet the assignment's reliability standards.*
+**Overall Effectiveness Score: 4**
+
+**Strategic Use Statement:**
+AI usage was deliberately limited to utility scaffolding, reference validation, and test boilerplate generation, as permitted by the assignment. All core system responsibilities—authentication flow, encryption strategy, API design, database schema, and frontend-backend integration—were designed and implemented manually to ensure reliability, security, and clear ownership of the solution.
 
 ---
 
