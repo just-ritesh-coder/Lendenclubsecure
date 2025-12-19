@@ -24,14 +24,6 @@ body {
   background: var(--bg-gradient);
 }
 
-.app-background {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Split Screen Layout for Auth */
 .auth-wrapper {
   display: flex;
@@ -49,8 +41,6 @@ body {
   padding: 60px;
   color: var(--primary-blue);
   position: relative;
-  /* You can add a background image here if you have one, 
-       but we will stick to the gradient/graphics style */
 }
 
 .auth-left-content h1 {
@@ -60,7 +50,7 @@ body {
   line-height: 1.2;
   margin-bottom: 20px;
   color: #1a3b5c;
-  /* Darker blue for text contrast */
+  /* Darker blue */
 }
 
 .auth-left-stats {
@@ -98,7 +88,6 @@ body {
   max-width: 400px;
   box-shadow: var(--shadow-card);
   border: none;
-  /* Removed border */
 }
 
 .logo-img {
@@ -181,26 +170,262 @@ h2 {
   font-weight: 600;
 }
 
-/* Dashboard Navigation */
-.dashboard-nav {
+/* =========================================
+   DASHBOARD LAYOUT (New Implementation)
+   ========================================= */
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F8F9FA;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 260px;
   background: white;
-  padding: 15px 40px;
+  border-right: 1px solid #E5E7EB;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-logo {
+  height: 36px;
+  margin-bottom: 40px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-item.active {
+  background-color: #ebf5ff;
+  /* Light blue tint */
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.nav-item:hover {
+  background-color: #f3f4f6;
+  color: var(--text-dark);
+}
+
+.logout-container {
+  margin-top: auto;
+  border-top: 1px solid #E5E7EB;
+  padding-top: 20px;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: none;
+  color: #DC2626;
+  /* Red for logout */
+  text-align: left;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+/* Main Content Area */
+.dashboard-main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.header-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 32px;
 }
 
-.dashboard-nav .logo-img {
-  height: 32px;
+.header-section h1 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
   margin: 0;
-  /* Reset auto margin */
+  font-family: 'Lexend Deca', sans-serif;
 }
 
-/* Profile styles remain similar but use new variables */
-.profile-card {
+.user-snippet {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
   background: white;
-  border-radius: var(--border-radius-card);
-  box-shadow: var(--shadow-card);
-  /* ... keep previous internal layout ... */
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+  color: var(--text-grey);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.stat-trend {
+  font-size: 0.85rem;
+  margin-top: 12px;
+  display: block;
+  font-weight: 500;
+}
+
+.trend-up {
+  color: #16A34A;
+}
+
+.trend-neutral {
+  color: var(--text-grey);
+}
+
+/* Profile Detail Section */
+.profile-section-title {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.profile-detail-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid #E5E7EB;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.kyc-badge {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: #DCFCE7;
+  color: #166534;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-group {
+  margin-bottom: 32px;
+}
+
+.field-label {
+  color: var(--text-grey);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.field-value {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.field-value.highlight {
+  font-family: 'Courier New', monospace;
+  background: #F3F4F6;
+  padding: 10px 16px;
+  border-radius: 8px;
+  letter-spacing: 2px;
+  display: inline-block;
+  border: 1px solid #E5E7EB;
+  color: #111827;
+}
+
+.security-footer {
+  padding-top: 24px;
+  margin-top: 10px;
+  border-top: 1px solid #F3F4F6;
+  color: #047857;
+  /* Darker green */
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-blue);
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 1.2rem;
 }
