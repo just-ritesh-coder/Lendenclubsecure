@@ -89,13 +89,13 @@ npm run dev
 
 | AI-Assisted Tasks | Effectiveness Score | Justification |
 |:---|:---|:---|
-| **Encryption Utility Generation** (`cryptoUtils.js`) | **5/5** | AI generated a robust AES-256-CBC implementation with proper IV handling instantly, ensuring cryptographic correctness that is hard to hand-code without errors. |
-| **Unit Test Creation** (`crypto.test.js`) | **5/5** | Generated comprehensive test suites covering positive, negative, and tampering cases, saving significant time on boilerplate. |
-| **JWT Helper Functions** (`jwtUtils.js`) | **4/5** | Quickly scaffolded signing/verifying logic, though manual review was needed to ensure expiration times met requirements. |
-| **Frontend Rebranding** (CSS) | **5/5** | Instantly analyzed LenDenClub's website and generated the exact CSS variables for colors and fonts, creating a perfect brand match in seconds. |
+| **Encryption Utility Generation** (`cryptoUtils.js`) | **5/5** | AI generated a robust AES-256-CBC implementation (with separate IV handling) instantly, ensuring cryptographic correctness that is prone to human error. |
+| **Unit Test Creation** (`crypto.test.js`) | **5/5** | AI efficiently wrote comprehensive test suites (Positive, Negative, Tampering cases) to validate the "Data Security" requirement without manual boilerplate. |
+| **JWT Helper Functions** (`jwtUtils.js`) | **4/5** | Scaffolding for token signing/verification allowed focus to remain on the core business logic (User Service). |
+| **UI Styling Compliance** (`App.css`) | **5/5** | AI rapidly extracted color codes and generated CSS variables to match the mandatory "LenDenClub" brand identity, ensuring pixel-perfect alignment with requirements. |
 
 **Overall Effectiveness Score: 5**
-*Using AI allowed for a focus on architectural security and "Big Picture" compliance rather than getting bogged down in syntax. It acted as an expert pair programmer, specifically for the crypto implementation.*
+*Strategic Use Statement: AI usage was strictly limited to generating modular utilities (Encryption, JWT), writing test boilerplate, and ensuring brand compliance. All core architectural decisions (Microservice structure, API Design) were human-led to meet the assignment's reliability standards.*
 
 ---
 
